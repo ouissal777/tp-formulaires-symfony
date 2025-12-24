@@ -1,0 +1,15 @@
+services:
+  php:
+    image: php:8.2-cli
+    container_name: symfony_tp_php
+    volumes:
+      - .:/app
+    working_dir: /app
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=dev
+      - APP_SECRET=ThisTokenIsNotSoSecretChangeIt
+      - DATABASE_URL=sqlite:///%kernel.project_dir%/var/data.db
+    command: >
+      sh -c "php -S 0.0.0.0:8000 -t public"

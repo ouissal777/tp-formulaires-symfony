@@ -1,0 +1,4 @@
+controllers:
+    resource: ../../src/Controller/
+    type: attribute
+    # name_prefix: app_
